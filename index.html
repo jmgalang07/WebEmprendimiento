@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="es"> <head><meta charset="UTF-8"><meta name="description" content="Web de emprendimiento para el IES Albarregas"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Web emprendimiento</title><link rel="stylesheet" href="/_astro/index.CRfrigHV.css"><script type="module" src="/_astro/hoisted.CBpI_DoT.js"></script></head> <body> <vercel-analytics data-props="{}" data-params="{}" data-pathname="/"></vercel-analytics>  <vercel-speed-insights data-props="{}" data-params="{}" data-pathname="/"></vercel-speed-insights>   <header id="header" data-astro-cid-3ef6ksr2> <div id="albarregasImage" class="w-1/6" data-astro-cid-3ef6ksr2> <img src="images/header/logoAlbarregas.png" alt="Logo del Instituto Albarregas" data-astro-cid-3ef6ksr2> </div> <div id="celebrationDays" data-astro-cid-3ef6ksr2> <p data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2>3</span>|<span data-astro-cid-3ef6ksr2>4</span>|<span data-astro-cid-3ef6ksr2>5</span>|<span data-astro-cid-3ef6ksr2>6</span>|<span data-astro-cid-3ef6ksr2>7</span>&nbsp;de Febrero
+</p> <h5 data-astro-cid-3ef6ksr2>IES Albarregas</h5> </div> <div id="whiteBar" data-astro-cid-3ef6ksr2></div> <div id="webParts" data-astro-cid-3ef6ksr2> <span data-astro-cid-3ef6ksr2><a href="/#header" data-astro-cid-3ef6ksr2>Inicio</a></span> <span data-astro-cid-3ef6ksr2><a href="/#info" data-astro-cid-3ef6ksr2>Familias profesionales</a></span> <span data-astro-cid-3ef6ksr2><a href="/#companies" data-astro-cid-3ef6ksr2>Colaboradores</a></span> </div> </header>  <div id="hero-container" data-astro-cid-bbe6dxrz> <div id="phrase" data-astro-cid-bbe6dxrz> <span class="text-accent-color" data-astro-cid-bbe6dxrz>Jornadas del</span> <span class="text-accent-color" data-astro-cid-bbe6dxrz>Emprendimiento</span> <span class="text-accent-color" data-astro-cid-bbe6dxrz>Sostenible</span> </div> <img src="images/hero/logoAulaEmpren.webp" alt="Logo del Aula de Emprendimiento" loading="eager" data-astro-cid-bbe6dxrz> <div id="scroll-indicator" data-astro-cid-bbe6dxrz></div> </div>  <link href="https://unpkg.com/@pqina/flip/dist/flip.min.css" rel="stylesheet"><script src="https://unpkg.com/@pqina/flip/dist/flip.min.js"></script><div id="counter" data-astro-cid-x63rdsgb> <div id="border-container" data-astro-cid-x63rdsgb> <div id="title-counter" data-astro-cid-x63rdsgb> <h1 class="delay-[100ms] duration-[600ms] taos:translate-x-[-100%] taos:opacity-0" data-taos-offset="-100" data-astro-cid-x63rdsgb> <p class="acent-color text-center" data-astro-cid-x63rdsgb>Comienzan en</p> </h1> </div> <div class="tick" data-did-init="handleTickInit" data-astro-cid-x63rdsgb> <div class="delay-[300ms] duration-[600ms] taos:translate-y-[100%] taos:opacity-0" data-taos-offset="-100" data-astro-cid-x63rdsgb> <div data-repeat="true" data-layout="horizontal fit" data-transform="preset(d, h, m, s) -> delay" data-astro-cid-x63rdsgb> <div class="tick-group" data-astro-cid-x63rdsgb> <div data-key="value" data-repeat="true" data-transform="pad(00) -> split -> delay" data-astro-cid-x63rdsgb> <span data-view="flip" data-astro-cid-x63rdsgb></span> </div> <span data-key="label" data-view="text" class="tick-label" data-astro-cid-x63rdsgb></span> </div> </div> </div> </div> </div> </div> <script>
+  function handleTickInit(tick) {
+    // uncomment to set labels to different language
+
+    var locale = {
+      YEAR_PLURAL: "Años",
+      YEAR_SINGULAR: "Año",
+      MONTH_PLURAL: "Meses",
+      MONTH_SINGULAR: "Mes",
+      WEEK_PLURAL: "Semanas",
+      WEEK_SINGULAR: "Semana",
+      DAY_PLURAL: "Días",
+      DAY_SINGULAR: "Día",
+      HOUR_PLURAL: "Horas",
+      HOUR_SINGULAR: "Hora",
+      MINUTE_PLURAL: "Minutos",
+      MINUTE_SINGULAR: "Minuto",
+      SECOND_PLURAL: "Segundos",
+      SECOND_SINGULAR: "Segundo",
+      MILLISECOND_PLURAL: "Milisegundos",
+      MILLISECOND_SINGULAR: "Milisegundo",
+    };
+
+    for (var key in locale) {
+      if (!locale.hasOwnProperty(key)) {
+        continue;
+      }
+      tick.setConstant(key, locale[key]);
+    }
+
+    // format of due date is ISO8601
+    // https://en.wikipedia.org/wiki/ISO_8601
+
+    // '2018-01-31T12:00:00'        to count down to the 31st of January 2018 at 12 o'clock
+    // '2019'                       to count down to 2019
+    // '2018-01-15T10:00:00+01:00'  to count down to the 15th of January 2018 at 10 o'clock in timezone GMT+1
+
+    //var nextYear = new Date().getFullYear() + 1;
+    var countdownDate = "2025-02-03T00:00:00+01:00";
+
+    // create the countdown counter
+    var counter = Tick.count.down(countdownDate);
+
+    counter.onupdate = function (value) {
+      tick.value = value;
+    };
+
+    counter.onended = function () {
+      // redirect, uncomment the next line
+      // window.location = 'my-location.html'
+      // hide counter, uncomment the next line
+      // tick.root.style.display = 'none';
+      // show message, uncomment the next line
+      // document.querySelector('.tick-onended-message').style.display = '';
+    };
+
+    // Hide tick-credits
+    setTimeout(function () {
+      // Esconde tick-credits
+      const tickCredits = document.querySelector(".tick-credits");
+      if (tickCredits) {
+        tickCredits.style.display = "none";
+      }
+    }, 1); // Retrasa la ejecución 100 milisegundos
+  }
+</script> <div class="tick-onended-message" style="display: none" data-astro-cid-x63rdsgb> <p data-astro-cid-x63rdsgb>Time's up</p> </div> <h1 class="title-info font-bold my-0.5 text-secondary-color text-xl tablet:text-2xl computer:text-5xl text-center" data-astro-cid-aybbmsmj>
+¿QUÉ ES LA JORNADA DE EMPRENDIMIENTO?
+</h1> <div class="introduction-container border-solid accent-accent-color" data-astro-cid-aybbmsmj> <div data-astro-cid-aybbmsmj> <a target="_blank" href="https://drive.google.com/file/d/1kRp2pS7lJ36JiuO1XIBVdPCDr3FqOv2b/view?usp=sharing" data-astro-cid-aybbmsmj> <button class="py-4 px-8 text-white text-2xl rounded bg-blue-700 mb-7" data-astro-cid-aybbmsmj>Cartel principal</button> </a> </div> <div class="introduction-card delay-[300ms] duration-[600ms] taos:translate-y-[100%] taos:opacity-0 " data-taos-offset="-300" data-astro-cid-aybbmsmj> <div class="image-container" data-astro-cid-aybbmsmj> <img loading="lazy" src="images/info/circuloODS.webp" alt="Evento de emprendimiento" class="card-image" id="card-image1" data-astro-cid-aybbmsmj> </div> <div class="divisor h-px md:h-32 w-full md:w-px bg-gray-200" data-astro-cid-aybbmsmj></div> <div class="info-text text-right" data-astro-cid-aybbmsmj> <p data-astro-cid-aybbmsmj>
+La jornada del emprendimiento es una semana especial en el instituto Albarregas, donde los estudiantes pueden aprender sobre innovación y creatividad en los negocios a través de talleres y conferencias.</p> </div> </div> <div class="introduction-card delay-[300ms] duration-[600ms] taos:translate-y-[100%] taos:opacity-0" data-taos-offset="-300" data-astro-cid-aybbmsmj> <div class="divisor h-px md:h-32 w-full md:w-px bg-gray-200" data-astro-cid-aybbmsmj></div> <div class="info-text text-left" data-astro-cid-aybbmsmj> <p data-astro-cid-aybbmsmj>
+Los estudiantes desarrollarán habilidades clave para convertirse en futuros emprendedores mediante actividades prácticas y trabajo en equipo.
+</p> </div> <div class="image-container w-44" data-astro-cid-aybbmsmj> <img loading="lazy" src="images/info/iesAlbarregas.webp" alt="Evento de emprendimiento" class="card-image " data-astro-cid-aybbmsmj> </div> </div> </div>  <div id="info" class="bg-white info-container" data-astro-cid-vxl4wgev> <div class="title-container" data-astro-cid-vxl4wgev> <h1 class="animated-title font-bold text-secondary-color" data-astro-cid-vxl4wgev>
+Familias profesionales
+</h1> </div> <div id="cards" data-astro-cid-vxl4wgev> <div id="card" class="bg-primary-color yellow block" data-astro-cid-vxl4wgev> <div class="text-content" data-astro-cid-vxl4wgev> <h3 class="wavy" data-astro-cid-vxl4wgev> <span style="--i:1;" data-astro-cid-vxl4wgev>I</span> <span style="--i:2;" data-astro-cid-vxl4wgev>n</span> <span style="--i:3;" data-astro-cid-vxl4wgev>a</span> <span style="--i:4;" data-astro-cid-vxl4wgev>u</span> <span style="--i:5;" data-astro-cid-vxl4wgev>g</span> <span style="--i:6;" data-astro-cid-vxl4wgev>u</span> <span style="--i:7;" data-astro-cid-vxl4wgev>r</span> <span style="--i:8;" data-astro-cid-vxl4wgev>a</span> <span style="--i:9;" data-astro-cid-vxl4wgev>c</span> <span style="--i:10;" data-astro-cid-vxl4wgev>i</span> <span style="--i:11;" data-astro-cid-vxl4wgev>ó</span> <span style="--i:12;" data-astro-cid-vxl4wgev>n</span> </h3> <div class="p-container" data-astro-cid-vxl4wgev> <p id="text" data-astro-cid-vxl4wgev>
+Descubre oportunidades en la Jornada de Emprendimiento del I.E.S.
+            Albarregas. Un evento único donde empresas y alumnos se conectan
+            cara a cara para compartir ideas, explorar colaboraciones y abrir
+            puertas hacia un futuro profesional más cercano. ¡No te lo pierdas!
+</p> </div> <!-- Buttons --> <div class="flex gap-4 mt-4" data-astro-cid-vxl4wgev> <a target="_blank" href="https://drive.google.com/file/d/1dPAirjaa_sFvTHIyOXDt44g3u1l3-L6p/view?usp=sharing" data-astro-cid-vxl4wgev><button class="py-2 px-4 bg-[#FDC01A] text-white rounded" data-astro-cid-vxl4wgev>Horario</button></a> </div> </div> <div class="img-container" data-astro-cid-vxl4wgev> <img id="yellowLight" src="images/info/yellow.webp" alt="Bombilla amarilla" data-astro-cid-vxl4wgev> </div> </div> <div id="card" class="bg-primary-color green block" data-astro-cid-vxl4wgev> <div class="img-container" data-astro-cid-vxl4wgev> <img id="greenLight" src="images/info/green.webp" alt="Bombilla verde" data-astro-cid-vxl4wgev> </div> <div class="text-content" data-astro-cid-vxl4wgev> <h3 class="wavy" data-astro-cid-vxl4wgev> <span style="--i:1;" data-astro-cid-vxl4wgev>A</span> <span style="--i:2;" data-astro-cid-vxl4wgev>d</span> <span style="--i:3;" data-astro-cid-vxl4wgev>m</span> <span style="--i:4;" data-astro-cid-vxl4wgev>i</span> <span style="--i:5;" data-astro-cid-vxl4wgev>n</span> <span style="--i:6;" data-astro-cid-vxl4wgev>i</span> <span style="--i:7;" data-astro-cid-vxl4wgev>s</span> <span style="--i:8;" data-astro-cid-vxl4wgev>t</span> <span style="--i:9;" data-astro-cid-vxl4wgev>r</span> <span style="--i:10;" data-astro-cid-vxl4wgev>a</span> <span style="--i:11;" data-astro-cid-vxl4wgev>c</span> <span style="--i:12;" data-astro-cid-vxl4wgev>i</span> <span style="--i:13;" data-astro-cid-vxl4wgev>ó</span> <span style="--i:14;" data-astro-cid-vxl4wgev>n</span> <span style="--i:15;" data-astro-cid-vxl4wgev>&nbsp;</span> <span style="--i:16;" data-astro-cid-vxl4wgev>y</span> <span style="--i:17;" data-astro-cid-vxl4wgev>&nbsp;</span> <span style="--i:18;" data-astro-cid-vxl4wgev>G</span> <span style="--i:19;" data-astro-cid-vxl4wgev>e</span> <span style="--i:20;" data-astro-cid-vxl4wgev>s</span> <span style="--i:21;" data-astro-cid-vxl4wgev>t</span> <span style="--i:22;" data-astro-cid-vxl4wgev>i</span> <span style="--i:23;" data-astro-cid-vxl4wgev>ó</span> <span style="--i:24;" data-astro-cid-vxl4wgev>n</span> </h3> <div class="p-container" data-astro-cid-vxl4wgev> <p id="text" data-astro-cid-vxl4wgev>
+Descubre cómo las competencias en administración y gestión pueden
+            marcar la diferencia en el mundo del emprendimiento. Durante esta
+            jornada, exploraremos casos prácticos, herramientas innovadoras y
+            estrategias clave que impulsan a los futuros gestores y
+            administrativos a crear y liderar sus propios proyectos con éxito.
+            ¡Es tu oportunidad para conectar teoría y práctica en el apasionante
+            universo de los negocios!
+</p> </div> <!-- Buttons --> <div class="flex gap-4 mt-4 justify-end" data-astro-cid-vxl4wgev> <a target="_blank" href="https://drive.google.com/file/d/1hKP2orm3y1_SWvyLHZ1elZ7ugwiMGeLZ/view?usp=sharing" data-astro-cid-vxl4wgev><button class="py-2 px-4 bg-[#008000] text-white rounded" data-astro-cid-vxl4wgev>Horario</button></a> </div> </div> </div> <div id="card" class="bg-primary-color blue block" data-astro-cid-vxl4wgev> <div class="text-content" data-astro-cid-vxl4wgev> <h3 class="wavy" data-astro-cid-vxl4wgev> <span style="--i:1;" data-astro-cid-vxl4wgev>C</span> <span style="--i:2;" data-astro-cid-vxl4wgev>o</span> <span style="--i:3;" data-astro-cid-vxl4wgev>m</span> <span style="--i:4;" data-astro-cid-vxl4wgev>e</span> <span style="--i:5;" data-astro-cid-vxl4wgev>r</span> <span style="--i:6;" data-astro-cid-vxl4wgev>c</span> <span style="--i:7;" data-astro-cid-vxl4wgev>i</span> <span style="--i:8;" data-astro-cid-vxl4wgev>o</span> <span style="--i:9;" data-astro-cid-vxl4wgev>&nbsp; </span> <span style="--i:10;" data-astro-cid-vxl4wgev>y</span> <span style="--i:11;" data-astro-cid-vxl4wgev>&nbsp;</span> <span style="--i:12;" data-astro-cid-vxl4wgev>M</span> <span style="--i:13;" data-astro-cid-vxl4wgev>a</span> <span style="--i:14;" data-astro-cid-vxl4wgev>r</span> <span style="--i:15;" data-astro-cid-vxl4wgev>k</span> <span style="--i:16;" data-astro-cid-vxl4wgev>e</span> <span style="--i:17;" data-astro-cid-vxl4wgev>t</span> <span style="--i:18;" data-astro-cid-vxl4wgev>i</span> <span style="--i:19;" data-astro-cid-vxl4wgev>n</span> <span style="--i:20;" data-astro-cid-vxl4wgev>g</span> </h3> <div class="p-container" data-astro-cid-vxl4wgev> <p data-astro-cid-vxl4wgev>
+El comercio y el marketing son la columna vertebral de cualquier
+            emprendimiento exitoso. En esta jornada, aprenderás a diseñar
+            estrategias de venta efectivas, a utilizar las redes sociales para
+            captar clientes y a analizar las tendencias del mercado para
+            destacar en un entorno competitivo. Únete a nosotros y da el primer
+            paso hacia tu futuro como emprendedor creativo e innovador.
+</p> </div> <!-- Buttons --> <div class="flex gap-4 mt-4" data-astro-cid-vxl4wgev> <a target="_blank" href="https://drive.google.com/file/d/1U9T29pMaCNVMRvGyjnG8R0XXQlrrIimX/view?usp=sharing" data-astro-cid-vxl4wgev><button class="py-2 px-4 bg-[#0000FF] text-white rounded" data-astro-cid-vxl4wgev>Horario</button></a> </div> </div> <div class="img-container" data-astro-cid-vxl4wgev> <img id="blueLight" src="images/info/blue.webp" alt="Bombilla azul" data-astro-cid-vxl4wgev> </div> </div> <div id="card" class="bg-primary-color red block" data-astro-cid-vxl4wgev> <div class="img-container" data-astro-cid-vxl4wgev> <img id="redLight" src="images/info/red.webp" alt="Bombilla roja" data-astro-cid-vxl4wgev> </div> <div class="text-content" data-astro-cid-vxl4wgev> <h3 class="wavy" data-astro-cid-vxl4wgev> <span style="--i:1;" data-astro-cid-vxl4wgev>I</span> <span style="--i:2;" data-astro-cid-vxl4wgev>n</span> <span style="--i:3;" data-astro-cid-vxl4wgev>f</span> <span style="--i:4;" data-astro-cid-vxl4wgev>o</span> <span style="--i:5;" data-astro-cid-vxl4wgev>r</span> <span style="--i:6;" data-astro-cid-vxl4wgev>m</span> <span style="--i:7;" data-astro-cid-vxl4wgev>á</span> <span style="--i:8;" data-astro-cid-vxl4wgev>t</span> <span style="--i:9;" data-astro-cid-vxl4wgev>i</span> <span style="--i:10;" data-astro-cid-vxl4wgev>c</span> <span style="--i:11;" data-astro-cid-vxl4wgev>a</span> </h3> <div class="p-container" data-astro-cid-vxl4wgev> <p data-astro-cid-vxl4wgev>
+Las "Jornadas Tecnológicas del I.E.S. Albarregas" es una oportunidad
+            única para que los estudiantes y la comunidad educativa conozcan de
+            cerca el mundo de la tecnología y el emprendimiento. Este evento se
+            enmarca dentro del Proyecto de Cultura Emprendedora y utiliza la
+            Formación Profesional Dual como un elemento clave para conectar la
+            educación con el entorno laboral.
+</p> </div> <!-- Buttons --> <div class="flex gap-4 mt-4 justify-end" data-astro-cid-vxl4wgev> <a target="_blank" href="https://drive.google.com/file/d/1U40NY5v66vtTUXVK-jdVJlhYmhP62YxN/view?usp=sharing" data-astro-cid-vxl4wgev><button class="py-2 px-4 bg-red-600 text-white rounded" data-astro-cid-vxl4wgev>Horario</button></a> </div> </div> </div> <div id="card" class="bg-primary-color purple block" data-astro-cid-vxl4wgev> <div class="text-content" data-astro-cid-vxl4wgev> <h3 class="wavy" data-astro-cid-vxl4wgev> <span style="--i:1;" data-astro-cid-vxl4wgev>E.</span> <span style="--i:2;" data-astro-cid-vxl4wgev>S.</span> <span style="--i:3;" data-astro-cid-vxl4wgev>O.</span> <span style="--i:4;" data-astro-cid-vxl4wgev>&nbsp;</span> <span style="--i:5;" data-astro-cid-vxl4wgev>y</span> <span style="--i:6;" data-astro-cid-vxl4wgev>&nbsp;</span> <span style="--i:7;" data-astro-cid-vxl4wgev>B</span> <span style="--i:8;" data-astro-cid-vxl4wgev>a</span> <span style="--i:9;" data-astro-cid-vxl4wgev>c</span> <span style="--i:10;" data-astro-cid-vxl4wgev>h</span> <span style="--i:11;" data-astro-cid-vxl4wgev>i</span> <span style="--i:12;" data-astro-cid-vxl4wgev>l</span> <span style="--i:13;" data-astro-cid-vxl4wgev>l</span> <span style="--i:14;" data-astro-cid-vxl4wgev>e</span> <span style="--i:15;" data-astro-cid-vxl4wgev>r</span> <span style="--i:16;" data-astro-cid-vxl4wgev>a</span> <span style="--i:17;" data-astro-cid-vxl4wgev>t</span> <span style="--i:18;" data-astro-cid-vxl4wgev>o</span> </h3> <div class="p-container" data-astro-cid-vxl4wgev> <p data-astro-cid-vxl4wgev>¿Tienes una idea y no sabes por dónde empezar? La jornada de emprendimiento está diseñada para inspirar a los jóvenes de ESO y Bachillerato a explorar el mundo empresarial de manera divertida y dinámica. A través de talleres interactivos y charlas motivadoras, descubrirás cómo convertir tus ideas en proyectos reales y cómo las habilidades que aprendes en clase son fundamentales para emprender.</p> </div> <!-- Buttons --> <div class="flex gap-4 mt-4" data-astro-cid-vxl4wgev> <a target="_blank" href="https://drive.google.com/file/d/1Q-bpTFAvc-Tn-0albxGw_00C-REQBXZR/view?usp=sharing" data-astro-cid-vxl4wgev><button class="py-2 px-4 bg-[#800080] text-white rounded" data-astro-cid-vxl4wgev>Horario</button></a> </div> </div> <div class="img-container" data-astro-cid-vxl4wgev> <img id="purpleLight" src="images/info/purple.webp" alt="Bombilla morada" data-astro-cid-vxl4wgev> </div> </div> </div> </div>   <script>
+  function openModal(modalId) {
+    document.getElementById(modalId).classList.remove("hidden");
+    document.body.classList.add("overflow-hidden");
+  }
+
+  function closeModal(modalId) {
+    document.getElementById(modalId).classList.add("hidden");
+    document.body.classList.remove("overflow-hidden");
+  }
+
+  // Seleccionamos todas las tarjetas
+  const cards = document.querySelectorAll("#card");
+
+  // Creamos el observer para detectar cuando las tarjetas son visibles
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const card = entry.target;
+
+          // Añadir clase de visibilidad
+          card.classList.add("visible");
+
+          // Animaciones para imagen
+          const lightImage = card.querySelector('img[id$="Light"]');
+          if (lightImage) {
+            lightImage.style.animationPlayState = "running";
+          }
+
+          // Animaciones para texto
+          const paragraphs = card.querySelectorAll(".p-container p");
+          paragraphs.forEach((p) => {
+            p.style.animationPlayState = "running";
+          });
+
+          // Animación de letras
+          const h3 = card.querySelector("h3.wavy");
+          if (h3) {
+            const spans = h3.querySelectorAll("span");
+            spans.forEach((span) => {
+              span.style.animationPlayState = "running";
+            });
+          }
+
+          // Deja de observar la tarjeta después de que entre en el viewport
+          observer.unobserve(card);
+        }
+      });
+    },
+    {
+      threshold: 0.1, // Dispara la animación cuando una pequeña parte de la tarjeta es visible
+    },
+  );
+
+  // Preparar las tarjetas antes de observarlas
+  cards.forEach((card) => {
+    // Pausar todas las animaciones inicialmente
+    const lightImage = card.querySelector('img[id$="Light"]');
+    if (lightImage) {
+      lightImage.style.animationPlayState = "paused";
+    }
+
+    const paragraphs = card.querySelectorAll(".p-container p");
+    paragraphs.forEach((p) => {
+      p.style.animationPlayState = "paused";
+    });
+
+    const h3 = card.querySelector("h3.wavy");
+    if (h3) {
+      const spans = h3.querySelectorAll("span");
+      spans.forEach((span) => {
+        span.style.animationPlayState = "paused";
+      });
+    }
+
+    // Comenzar a observar cada tarjeta
+    observer.observe(card);
+  });
+
+  // Seleccionar el contenedor del título
+  const titleContainer = document.querySelector(".title-container");
+
+  // Crear el observer para detectar visibilidad del contenedor
+  const titleObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Añadir clase para activar la animación
+          entry.target
+            .querySelector(".animated-title")
+            .classList.add("visible");
+
+          // Detener la observación después de activar la animación
+          titleObserver.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.5, // Dispara la animación cuando el 50% del contenedor sea visible
+    },
+  );
+
+  // Iniciar la observación del contenedor
+  titleObserver.observe(titleContainer);
+</script> <div id="companies" class="bg-white pb-8" data-astro-cid-h5tdzfsd> <h1 class="font-bold text-secondary-color p-10 text-xl tablet:text-2xl computer:text-4xl text-center" data-astro-cid-h5tdzfsd>COLABORADORES</h1> <div class="w-11/12 m-auto grid gap-4 grid-cols-3 tablet:grid-cols-4 computer:grid-cols-5" data-astro-cid-h5tdzfsd> <div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Acopaex (convert.io).D82FopL6.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Alditraex.CgE7Ch4r.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Ayuntamiento Mérida.BwM7i0Vt.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Camara comercio badajoz (convert.io).CyYSLLqB.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Copia de LOGO BIG MAT (convert.io).DtWRhVL3.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Copia de Solwed_ES_oscuro.BRjU4qGq.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Cuentamas_01_logoweb.Dz5i52Tb.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/ESNED.BCuGOoqi.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/FABLAB.SUhArttH.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/FIBRIX.-IfwGOzU.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/INBRAEX LOGO.B_KAAc4O.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Ilke Benson.Bqq1GTvx.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/LA VENDITA.BaZ0sWLJ.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/LOGO AGP 2.DiqTNWKE.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/LOGO Emtech 2024.CzWIbSop.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/LOGO Emérita 2024.CHSBu9M4.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/LOGO FEMEC.F4jJjV0n.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/LOGO R_S 2024.x2q9QbQh.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/LOGO-DEFINITIVO-CHICVENT.BFba9Fm_.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Logo Bittacora.Di9cApIw.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Logo EMPEX.xVgKSnVz.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Logo Edartem PNG.BrDtHrPb.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Logo Hi Telecom blanco.DSHDGa9w.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Logo Plexus Tech.D77ocap7.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Logo-Ges-Seguros.BIYffgvU.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Logo_de_la_Consejería_de_Educación__Ciencia_y_Formación_Profesional_(No_Oficial).yHLoG5g8.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/MARCA-CIBERVOLUNTARIOS-WEB.CZi-liWj.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/MIELES DE ANAM.eaVJP96R.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/MOVILEX LOGO.D0_j3rnh.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/NAI SERVICIOS ASISTENCIALES.BwqEqUf9.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/NATURVIE-_1_.9LPGjhUj.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/ONEX LOGO.B46T6TDm.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/SPRINTER.CpnGp6sr.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Stemdo_Icono.CxMO519A.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Sándalo-_1_.C7oHwR-6.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/Talentia_1-_2_.BEfH80No.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/extrenatura logo.Dohsq0yS.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/logiRAIL.BqiWfHvB.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/logo LHV 2019 (1).E8QiSC2P.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/logo veyve.DTtpAU4S.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/logo-A-de-Arco.Cyzn7p0V.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/logo-transportes-ramon-merida-navalmoral-extremadura-rojo.C95nJmY7.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/logoAvante-02.SCcIvQ7P.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/logoInquiba.CYIwEjeq.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/logoLaraFinalGrande.Caspcy9y.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/logo_oesia_morado_alta.D1GWQqbT.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/logo_v.DTVJundy.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/maderas morales.B8l-8YS9.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/payperthink.ITX_BURy.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div><div class="square h-24 tablet:h-40 computer:h-52 flex items-center justify-center overflow-hidden shadow-md border rounded-2xl p-2" data-astro-cid-h5tdzfsd> <img src="/_astro/resulto-consultoria.CkoopPeE.webp" alt="company image" class="object-contain h-full w-auto" data-astro-cid-h5tdzfsd> </div> </div> </div>  <section id="slider-container" class="bg-black-color" data-astro-cid-txmsbymr> <div data-astro-cid-txmsbymr> <h1 class="text-accent-color" data-astro-cid-txmsbymr>Ediciones Anteriores</h1> </div> <div id="slider" style="
+        --width: 450px;
+        --height: 300px;
+        --quantity: 10;
+    " data-astro-cid-txmsbymr> <div class="list" data-astro-cid-txmsbymr> <div class="item" style="--position: 1" data-astro-cid-txmsbymr><img loading="lazy" src="images/slider/img1.jpg" loading="lazy" data-astro-cid-txmsbymr></div> <div class="item" style="--position: 2" data-astro-cid-txmsbymr><img loading="lazy" src="images/slider/img2.jpg" alt="" loading="lazy" data-astro-cid-txmsbymr></div> <div class="item" style="--position: 3" data-astro-cid-txmsbymr><img loading="lazy" src="images/slider/img3.jpg" alt="" loading="lazy" data-astro-cid-txmsbymr></div> <div class="item" style="--position: 4" data-astro-cid-txmsbymr><img loading="lazy" src="images/slider/img4.jpg" alt="" loading="lazy" data-astro-cid-txmsbymr></div> <div class="item" style="--position: 5" data-astro-cid-txmsbymr><img loading="lazy" src="images/slider/img5.jpg" alt="" loading="lazy" data-astro-cid-txmsbymr></div> <div class="item" style="--position: 6" data-astro-cid-txmsbymr><img loading="lazy" src="images/slider/img6.jpg" alt="" loading="lazy" data-astro-cid-txmsbymr></div> <div class="item" style="--position: 7" data-astro-cid-txmsbymr><img loading="lazy" src="images/slider/img7.jpg" alt="" loading="lazy" data-astro-cid-txmsbymr></div> <div class="item" style="--position: 8" data-astro-cid-txmsbymr><img loading="lazy" src="images/slider/img8.jpg" alt="" loading="lazy" data-astro-cid-txmsbymr></div> <div class="item" style="--position: 9" data-astro-cid-txmsbymr><img loading="lazy" src="images/slider/img9.jpg" alt="" loading="lazy" data-astro-cid-txmsbymr></div> <div class="item" style="--position: 10" data-astro-cid-txmsbymr><img loading="lazy" src="images/slider/img10.jpg" alt="" loading="lazy" data-astro-cid-txmsbymr></div> <div class="item" style="--position: 11" data-astro-cid-txmsbymr><img loading="lazy" src="images/slider/img11.jpg" alt="" loading="lazy" data-astro-cid-txmsbymr></div> <div class="item" style="--position: 12" data-astro-cid-txmsbymr><img loading="lazy" src="images/slider/img12.jpg" alt="" loading="lazy" data-astro-cid-txmsbymr></div> </div> </div> </section> <script>
+    const sliderItems = document.querySelectorAll("#slider .list .item");
+    const slider = document.querySelector("#slider");
+    const sliderList = document.querySelector("#slider .list");
+    sliderItems.forEach((item) => {
+        item.addEventListener("mouseenter", () => {
+            sliderItems.forEach((element) => {
+                element.style.animationPlayState = "paused";
+                element.style.filter = "brightness(0.25)";
+            });
+            item.style.visibility = "visible";
+            item.style.filter = "brightness(1)";
+        });
+
+        item.addEventListener("mouseleave", () => {
+            sliderItems.forEach((element) => {
+                element.style.animationPlayState = "running";
+                element.style.visibility = "visible";
+                element.style.filter = "brightness(1)";
+            });
+        });
+    });
+</script> <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"><footer data-astro-cid-sz7xmlte> <div class="footer-content" data-astro-cid-sz7xmlte> <p data-astro-cid-sz7xmlte>
+Proyecto desarrollado por los alumnos de segundo curso de
+</p> <p data-astro-cid-sz7xmlte><strong class="text-accent-color" data-astro-cid-sz7xmlte>Desarrollo de Aplicaciones Web Grupo A</strong></p> <div class="footer-info" data-astro-cid-sz7xmlte> <div class="contact" data-astro-cid-sz7xmlte> <div class="wavy" data-astro-cid-sz7xmlte> <span class="text-accent-color" data-astro-cid-sz7xmlte>CONTACTO</span> </div> <p data-astro-cid-sz7xmlte>Email: <a href="#" data-astro-cid-sz7xmlte>ies.albarregas@edu.juntaex.es</a></p> <p data-astro-cid-sz7xmlte>Teléfono: 924009856</p> </div> <div class="location" data-astro-cid-sz7xmlte> <div class="wavy" data-astro-cid-sz7xmlte> <span class="text-accent-color" data-astro-cid-sz7xmlte>UBICACIÓN</span> </div> <p data-astro-cid-sz7xmlte>Avenida Felipe Corchero, 37</p> <p data-astro-cid-sz7xmlte>06800 (Mérida), España</p> </div> <div class="hours" data-astro-cid-sz7xmlte> <div class="wavy" data-astro-cid-sz7xmlte> <span class="text-accent-color" data-astro-cid-sz7xmlte>HORARIO</span> </div> <p data-astro-cid-sz7xmlte>Lunes a Viernes: 8:30 - 14:30</p> <p data-astro-cid-sz7xmlte>Lunes a Viernes: 16:00 - 22:00</p> </div> </div> <div class="social-icons" data-astro-cid-sz7xmlte> <a href="https://www.facebook.com/IESAlbarregas/?locale=es_ES" title="Facebook" data-astro-cid-sz7xmlte><i class="fab fa-facebook" data-astro-cid-sz7xmlte></i></a> <a href="https://www.youtube.com/channel/UCiUozqM35zZfkck79TZG-0A" title="Youtube" data-astro-cid-sz7xmlte><i class="fab fa-youtube" data-astro-cid-sz7xmlte></i></a> <a href="https://www.instagram.com/ies.albarregas/?hl=es" title="Instagram" data-astro-cid-sz7xmlte><i class="fab fa-instagram" data-astro-cid-sz7xmlte></i></a> </div> <p class="copyright" data-astro-cid-sz7xmlte>
+&copy; 2024 Web de Emprendimiento. Todos los derechos reservados.
+</p> </div> </footer>    </body> </html> 
